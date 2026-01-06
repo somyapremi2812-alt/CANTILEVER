@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>📒 Contact Book</h1>
+
+    <a href="/add" class="btn btn-add">➕ Add Contact</a>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for c in contacts %}
+        <tr>
+            <td>{{ c[1] }}</td>
+            <td>{{ c[2] }}</td>
+            <td>{{ c[3] }}</td>
+            <td>
+                <a href="/edit/{{ c[0] }}" class="btn btn-edit">Edit</a>
+                <a href="/delete/{{ c[0] }}" class="btn btn-delete"
+                   onclick="return confirm('Delete this contact?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>

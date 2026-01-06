@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>➕ Add New Contact</h1>
+
+    <form method="post">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+
+        <button type="submit">Save Contact</button>
+    </form>
+
+    <br>
+    <a href="/" class="btn btn-back">⬅ Back</a>
+</div>
+
+</body>
+</html>
